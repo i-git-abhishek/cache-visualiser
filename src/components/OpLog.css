@@ -1,0 +1,37 @@
+.oplog {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  max-height: 450px;
+  overflow-y: auto;
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.oplog ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.oplog li {
+  padding: 0.35rem 0;
+  border-bottom: 1px solid #f3f4f6;
+  white-space: pre-wrap;
+}
+
+.oplog li:last-child {
+  border-bottom: none;
+}
+
+.oplog::-webkit-scrollbar {
+  width: 6px;
+}
+
+.oplog::-webkit-scrollbar-thumb {
+  background-color: #c7d2fe;
+  border-radius: 4px;
+}

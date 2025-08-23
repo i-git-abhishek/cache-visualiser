@@ -1,0 +1,73 @@
+.map-table {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  overflow-y: auto;
+  font-size: 0.9rem;
+}
+
+.map-table h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.map-table .muted {
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.map-table .empty {
+  padding: 0.75rem;
+  text-align: center;
+  font-style: italic;
+  color: #6b7280;
+}
+
+.map-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.map-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.map-table th,
+.map-table td {
+  border: 1px solid #e5e7eb;
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.map-table th {
+  background-color: #e0e7ff;
+  font-weight: 600;
+  color: #3730a3;
+}
+
+.map-table tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.map-table tbody tr:hover {
+  background-color: #f3f4f6;
+  transition: background-color 0.2s ease;
+}
+
+.map-table::-webkit-scrollbar {
+  width: 6px;
+}
+
+.map-table::-webkit-scrollbar-thumb {
+  background-color: #c7d2fe;
+  border-radius: 4px;
+}
