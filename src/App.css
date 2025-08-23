@@ -1,0 +1,12 @@
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.main-content {
+  padding: 2rem 0;
+  text-align: center;
+}
