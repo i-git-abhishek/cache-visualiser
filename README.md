@@ -1,12 +1,20 @@
-# React + Vite
+# Cache Replacement Policy Visualizer  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive web-based tool that helps students **learn and explore cache replacement policies** in Operating Systems. The visualizer makes it easier to grasp how different algorithms manage cache by showing each step of the process, including hits, misses, and replacements.  
 
-Currently, two official plugins are available:
+## 🚀 Key Features  
+- Implements multiple cache replacement algorithms:  
+  - **LRU (Least Recently Used)**  
+  - **FIFO (First In, First Out)**  
+  - **LFU (Least Frequently Used)**  
+- Step-by-step visualization of cache state changes.  
+- Real-time tracking of **hits, misses, and evictions**.  
+- Detailed operation log for every access.  
+- Performance statistics (hits, misses, hit ratio).  
+- Intuitive, responsive UI built with React.  
+- Upcoming support for additional policies (**MRU, Random**, etc.).  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🖥️ Live Demo  
+Try the app here:  
+👉 [Cache Visualiser](https://cache-visualiser.vercel.app/)  
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
