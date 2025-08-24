@@ -1,8 +1,7 @@
 import React from "react";
 import "./StatsBar.css";
 
-
-export default function statsBar({ hits, misses, ratio, size, cap }) {
+export default function StatsBar({ hits = 0, misses = 0, ratio = 0, size = 0, cap = 0 }) {
   return (
     <div className="stats">
       <div>Hits: <b>{hits}</b></div>

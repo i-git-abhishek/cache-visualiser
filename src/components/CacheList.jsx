@@ -2,7 +2,7 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./CacheList.css";
 
-export default function cacheList({ items }) {
+export default function cacheList({ items = [] }) {
   function SentinelBlock({text}){
     return(
       <motion.div
@@ -23,7 +23,7 @@ export default function cacheList({ items }) {
       <SentinelBlock text = "H" />
       <div className="nodes">
         <AnimatePresence mode="wait">
-          {items.map(({key, value}) => (
+          {items.map(({key, value, freq}) => (
             <motion.div
               key={key}
               layout
@@ -35,6 +35,9 @@ export default function cacheList({ items }) {
             >
               <div className="node-key">{key}</div>
               <div className="node-value">{value}</div>
+              {freq !== undefined && (
+                <div className="node-freq">freq: {freq}</div>
+                 )}
             </motion.div>
           ))}
         </AnimatePresence>

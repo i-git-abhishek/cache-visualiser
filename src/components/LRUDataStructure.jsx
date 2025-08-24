@@ -9,8 +9,6 @@ class Node {
 
 class LRUCache {
   constructor(cap) {
-    if (!Number.isInteger(cap) || cap < 0)
-      throw new Error("Capacity must be a positive integer");
     this.capacity = cap;
 
     this.head = new Node(-1, -1);
@@ -36,8 +34,8 @@ class LRUCache {
   }
 
   put(k, v) {
+    if(this.capacity === 0) return;
     if (this.hashMap.has(k)) {
-      this.hits += 1;
       const foundNode = this.hashMap.get(k);
       foundNode.value = v;
       this.unlinkNode(foundNode);
@@ -49,7 +47,6 @@ class LRUCache {
       this.hashMap.delete(lastNode.key);
       this.unlinkNode(lastNode);
     }
-    this.miss += 1;
     const newNode = new Node(k, v);
     this.addNode(newNode);
     this.hashMap.set(k, newNode);

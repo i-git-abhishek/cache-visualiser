@@ -16,6 +16,9 @@ function LRU() {
   const [mapState, setMapState] = useState(cache.mapSnapshot());
   const [opLog, setOpLog] = useState([]);
 
+  const [hits, setHits] = useState(0);
+  const [misses, setMisses] = useState(0);
+
   const refresh = (label) => {
     setListState([... cache.currentState()]);
     setMapState([... cache.mapSnapshot()]);
@@ -26,9 +29,7 @@ function LRU() {
   };
 
   const onPut = (k, v) => {
-    const beforeSize = cache.size();
     cache.put(k, v);
-    const afterSize = cache.size();
     refresh(`put(${k}, ${v})`);
   };
 
@@ -37,8 +38,6 @@ function LRU() {
     refresh (val === -1 ?  `get(${k}) -> miss` : `get(${k}) -> ${val}`);
   }
 
-  const [hits, setHits] = useState(0);
-  const [misses, setMisses] = useState(0);
 
   return (
     <div className="LRU">

@@ -39,7 +39,7 @@ export default function ControlPanel({ capacity, setCapacity, onPut ,onGet}) {
                 <input
                     type="number"
                     min={0}
-                    value={capacity}
+                    value={capacity ?? 0}
                     onChange={(e) => setCapacity(Number(e.target.value || 0))}
                 />
             </div>
