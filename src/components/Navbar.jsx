@@ -5,7 +5,7 @@ import "./Navbar.css";
 function Navbar() {
   return (
     <nav className="navbar">
-      <div className="navbar-brand">Cache Visualizer</div>
+      <div className="navbar-brand">Cache Visualiser</div>
       <ul className="navbar-links">
         <li><Link to="/lru">LRU</Link></li>
         <li><Link to="/fifo">FIFO</Link></li>
