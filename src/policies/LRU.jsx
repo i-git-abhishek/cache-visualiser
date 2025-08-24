@@ -1,11 +1,11 @@
 import React, { useState, useMemo } from "react";
 import LRUCache from "../components/LRUDataStructure";
-import ControlPanel from "../components/ControlPanel"
-import CacheList from "../components/CacheList"
-import MapTable from "../components/MapTable"
-import StatsBar from "../components/StatsBar"
-import OpLog from "../components/OpLog"
-import "./LRU.css"
+import ControlPanel from "../components/ControlPanel";
+import CacheList from "../components/CacheList";
+import MapTable from "../components/MapTable";
+import StatsBar from "../components/StatsBar";
+import OpLog from "../components/OpLog";
+import "./LRU.css";
 import Navbar from "../components/Navbar";
 
 function LRU() {
@@ -20,8 +20,8 @@ function LRU() {
   const [misses, setMisses] = useState(0);
 
   const refresh = (label) => {
-    setListState([... cache.currentState()]);
-    setMapState([... cache.mapSnapshot()]);
+    setListState([...cache.currentState()]);
+    setMapState([...cache.mapSnapshot()]);
     setOpLog((prev) => [label, ...prev].slice(0, 20));
 
     setHits(cache.hits);
@@ -35,47 +35,44 @@ function LRU() {
 
   const onGet = (k) => {
     const val = cache.get(k);
-    refresh (val === -1 ?  `get(${k}) -> miss` : `get(${k}) -> ${val}`);
-  }
-
+    refresh(val === -1 ? `get(${k}) -> miss` : `get(${k}) -> ${val}`);
+  };
 
   return (
     <div className="LRU">
       <Navbar />
       <h1>LRU Cache Visualizer</h1>
 
-        <CacheList items = {listState}/>
-        <div className="main-pane">
-          <div className="left-pane">
-            <div className="control-panel">
-              <ControlPanel
-                capacity={capacity}
-                setCapacity={setCapacity}
-                onPut={onPut}
-                onGet={onGet}
-                />
-            </div>
-            <div className="map-stats-row">
-              <div className="map-table">
-                <MapTable rows={mapState} capacity={capacity} />
-              </div>
-              <div className="stats-bar">
-                <StatsBar
-                  hits={hits}
-                  misses={misses}
-                  ratio={cache.hitRatio()}
-                  size={cache.size()}
-                  cap={capacity}
-                />
-              </div>
-            </div>
+      <CacheList items={listState} />
+      <div className="main-pane">
+        <div className="left-pane">
+          <div className="control-panel">
+            <ControlPanel
+              capacity={capacity}
+              setCapacity={setCapacity}
+              onPut={onPut}
+              onGet={onGet}
+            />
           </div>
-          <div className="op-log">
-            <OpLog log={opLog} />
+          <div className="map-stats-row">
+            <div className="map-table">
+              <MapTable rows={mapState} capacity={capacity} />
+            </div>
+            <div className="stats-bar">
+              <StatsBar
+                hits={hits}
+                misses={misses}
+                ratio={cache.hitRatio()}
+                size={cache.size()}
+                cap={capacity}
+              />
+            </div>
           </div>
         </div>
-
-
+        <div className="op-log">
+          <OpLog log={opLog} />
+        </div>
+      </div>
     </div>
   );
 }
