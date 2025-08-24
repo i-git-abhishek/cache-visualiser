@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import LRUimg from "../assets/LRUimg.png";
-import LFUimg from "../assets/LFUimg.png";
-import FIFOimg from "../assets/FIFOimg.png";
+import LRUimg from "../assets/LRUimg.webp";
+import LFUimg from "../assets/LFUimg.webp";
+import FIFOimg from "../assets/FIFOimg.webp";
 import "./CacheCards.css";
 
 const cacheCards = [
